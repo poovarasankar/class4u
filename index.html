@@ -1,0 +1,304 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 4U</title>
+  <link rel="stylesheet" href="new_styles.css"/>
+  <link rel="stylesheet" href="footer.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navbar = document.querySelector('.navbar');
+
+    // Toggle menu function
+    const toggleMenu = () => {
+        const isOpen = navLinks.classList.toggle('active');
+        menuToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    // Close menu when clicking outside
+    const closeMenu = (e) => {
+        if (!navbar.contains(e.target)) {
+            navLinks.classList.remove('active');
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    };
+
+    // Stop event from bubbling up when clicking the toggle
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    // Stop event from bubbling up when clicking links inside the menu
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Close menu if clicking outside
+    document.addEventListener('click', closeMenu);
+
+    // Reset menu on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
+
+</script>
+<style>
+.nav-links a.active {
+  background-color: yellow;
+  color: green !important;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+</style>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".load-content");
+  const contentContainer = document.getElementById("change");
+
+  // Function to set active link
+  function setActiveLink(clickedLink) {
+    links.forEach(link => link.classList.remove('active'));
+    clickedLink.classList.add('active');
+  }
+
+  // Function to load content
+ function loadContent(page) {
+  fetch(`/${page}`)
+    .then(response => response.text())
+    .then(data => {
+      contentContainer.innerHTML = data;
+      // Scroll to top after content is loaded
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Optional: add smooth scrolling
+      });
+    })
+    .catch(error => console.error("Error loading content:", error));
+}
+
+  // Function to handle page loading based on URL
+  function handleInitialLoad() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const requestedPage = urlParams.get('page');
+
+    if (requestedPage) {
+      const matchingLink = Array.from(links).find(link =>
+        link.getAttribute('data-page') === `${requestedPage}.html`
+      );
+
+      if (matchingLink) {
+        setActiveLink(matchingLink);
+        loadContent(matchingLink.getAttribute('data-page'));
+        return;
+      }
+    }
+
+    // Default to home if no valid page parameter
+    const homeLink = document.getElementById("home-link");
+    setActiveLink(homeLink);
+    loadContent('home.html');
+  }
+
+  // Set click handlers for navigation links
+  links.forEach(link => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      setActiveLink(link);
+      loadContent(link.getAttribute('data-page'));
+    });
+  });
+
+  // Handle browser back/forward navigation
+  window.addEventListener('popstate', function(event) {
+    handleInitialLoad();
+  });
+
+  // Initial page load
+  handleInitialLoad();
+});
+</script>
+
+
+
+
+
+
+</head>
+<body>
+  <!--<div id="preloader">
+    <div class="loader">
+      <h1>🔧 HighTech Co.</h1>
+      <div class="scanner"></div>
+    </div>
+  </div>
+
+-->
+
+  <div class="top-bar">
+    <span>⏱️ Call / WhatsApp: +91 9901444777</span>
+  </div>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.webp" alt="Class 4U Logo" />
+      <h1>CLASS <span style="color:  #ffc107;">4U</span></h1>
+    </div>
+    <nav class="nav-links">
+      <a  href="/home.html" id="home-link" class="load-content" data-page="home.html">Home</a>
+      <a href="/about_us.html" id="about-link" class="load-content" data-page="about_us.html">About Us</a>
+      <a href="/courses.html" id="courses-link" class="load-content" data-page="courses.html">Our Courses</a>
+      <a href="/ins.html" id="ins-link" class="load-content" data-page="ins.html">Institutions</a>
+      <a href="/contact.html" id="contact-link" class="load-content" data-page="contact.html">Contact</a>
+    </nav>
+   <button class="menu-toggle">&#9776;</button>
+  </header>
+ <div id="change">
+</div>
+ <!-- <div class="footer">
+    <div class="footer-top">
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Institutions</a></li>
+          <li><a href="#">Our Program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Organizers & Venues</h3>
+        <ul>
+          <li><a href="#">Event Organizers</a></li>
+          <li><a href="#">Event Venues</a></li>
+          <li><a href="#">Submit Organizer Form</a></li>
+          <li><a href="#">Submit Venue Form</a></li>
+          <li><a href="#">Organizer Dashboard</a></li>
+          <li><a href="#">Venue Dashboard</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Classes</h3>
+        <ul>
+          <li><a href="#">Art Classes</a></li>
+          <li><a href="#">French Language Class – Adults – 16+ Age</a></li>
+          <li><a href="#">German Language Class for Children – 1st to 12th Std</a></li>
+          <li><a href="#">German Language Classes – Adults – 16+ Age</a></li>
+          <li><a href="#">Learn Japanese Language</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Translation Services</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="footer-contact">
+      <div>📍 <strong>Our Address:</strong> (Add your address here)</div>
+      <div>📞 Phone: +91-XXXXXXXXXX</div>
+      <div>📧 Email: <a href="mailto:your@email.com" style="color:#ccc;">your@email.com</a></div>
+      <div>💬 <a href="#" style="color:#23b0c9;">Click here for Support</a></div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <div>
+        Terms of Use | Privacy Policy | Refund & Cancellation | Disclaimer
+      </div>
+      <div class="footer-social">
+        <a href="#" class="icon" title="Facebook"></a>
+        <a href="#" class="icon" title="Instagram"></a>
+        <a href="#" class="icon" title="LinkedIn"></a>
+        <a href="#" class="icon" title="YouTube"></a>
+      </div>
+    </div>
+
+    <div style="text-align: center; font-size: 12px; padding: 10px 0; color: #aaa;">
+      © 2025 Your Company Name. All Rights Reserved.
+    </div>
+  </div>
+-->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Class4U Academy</h3>
+        <p>Helping students achieve language fluency since 2005 through innovative teaching methods and cultural immersion.</p>
+        <!--<div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>-->
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/about_us.html" target="_blank">About Us</a></li>
+          <li><a href="/courses.html" target="_blank">Our Courses</a></li>
+
+          <li><a href="/ins.html" target="_blank">Institutions</a></li>
+          <li><a href="/contact.html" target="_blank">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <address>
+          <p><i class="fas fa-map-marker-alt"></i> F11, SGR complex, Carmelaram,
+( opposite D mart)
+Sarjapur Road , Bangalore-560035</p>
+          <p><i class="fas fa-phone"></i> +91 9901444777</p>
+          <p><i class="fas fa-envelope"></i>class4u.india@gmail.com</p>
+        </address>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Language Academy. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
+  <div><p>Powered By <span ><a href="https://www.fondfrites.com" target="_blank"
+      style="font-weight: 600; color: chartreuse; text-decoration: none;">
+    Fond Frites Private Limited</a></span></p></div>
+  </div>
+</footer>
+
+<script src="/courses.js"></script>
+<script src="/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+:root {
+    --primary-color: #014040;
+    --secondary-color: #027373;
+    --accent-color: #fbe84a;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f9f9f9;
+    --border-radius: 8px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+
+
+/* Footer Styles */
+.main-footer {
+    background-color: #206C7A;
+    color: var(--text-light);
+    padding: 60px 0 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-col h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+
+  .footer-col p {
+    margin-bottom: 20px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-light);
+    transition: var(--transition);
+  }
+
+  .social-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+
+  .footer-col ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+  }
+
+  address p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  address i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: var(--accent-color);
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    flex-grow: 1;
+    padding: 12px;
+    border: none;
+    border-radius: var(--border-radius);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .legal-links {
+    margin-top: 10px;
+  }
+
+  .legal-links a {
+    color: var(--text-light);
+    margin: 0 10px;
+    text-decoration: none;
+  }
+
+  .legal-links a:hover {
+    color: var(--accent-color);
+  }

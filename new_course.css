@@ -1,0 +1,175 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero-cours {
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-cours h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.hero-cours .sous-titre {
+  font-size: 1.2em;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Section Heading */
+.section-cours .en-tete-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.section-cours .en-tete-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.section-cours .introduction {
+  font-size: 1em;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* Course Grid */
+.grille-cours {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* Course Card */
+.carte-cours {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.carte-cours:hover {
+  transform: translateY(-5px);
+}
+
+/* Course Image */
+.image-carte {
+  position: relative;
+}
+
+.image-carte img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.badge-niveau {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #4f46e5;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  border-radius: 4px;
+}
+
+/* Card Content */
+.contenu-carte {
+  padding: 20px;
+}
+
+.contenu-carte h3 {
+  margin-top: 0;
+  color: #1f2937;
+  font-size: 1.4em;
+}
+
+.note {
+  color: #f59e0b;
+  margin: 8px 0;
+  font-size: 0.95em;
+}
+
+.note i {
+  margin-right: 2px;
+}
+
+.note span {
+  margin-left: 8px;
+  color: #666;
+}
+
+/* Features List */
+.caracteristiques-cours {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 20px;
+}
+
+.caracteristiques-cours li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  color: #444;
+}
+
+.caracteristiques-cours i {
+  margin-right: 8px;
+  color: #4f46e5;
+}
+
+/* Card Footer */
+.pied-carte {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bouton {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background 0.3s ease;
+}
+
+.bouton.principal {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.bouton.principal:hover {
+  background-color: #2563eb;
+}
+
+.bouton.secondaire {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.bouton.secondaire:hover {
+  background-color: #d1d5db;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .pied-carte {
+    flex-direction: column;
+  }
+}
