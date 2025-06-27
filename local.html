@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid #00bcd4;
+      border-radius: 12px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 188, 212, 0.3);
+    }
+
+    .card h3 {
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .card h2 {
+      color: #01579b;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .info {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .info img {
+      width: 28px;
+      margin-right: 15px;
+      margin-top: 4px;
+    }
+
+    .info .text {
+      color: #444;
+    }
+
+    .info .text strong {
+      display: block;
+      color: #000;
+      font-size: 16px;
+    }
+
+    .location-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .location-icon img {
+      width: 40px;
+    }
+
+    .location-text {
+      text-align: center;
+      color: #444;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Founder Card -->
+    <div class="card">
+      <h3>Contact our founder</h3>
+      <h2>A. Sesu Dasse</h2>
+
+      <div class="info">
+        <img src="https://img.icons8.com/color/48/phone.png" alt="Phone Icon">
+        <div class="text">
+          <strong>Phone</strong>
+          +91 77080 66655
+        </div>
+      </div>
+
+      <div class="info">
+        <img src="https://img.icons8.com/color/48/email.png" alt="Email Icon">
+        <div class="text">
+          <strong>Email</strong>
+          sesudass.mba@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Card -->
+    <div class="card">
+      <div class="location-icon">
+        <img src="https://img.icons8.com/color/48/marker.png" alt="Location Icon">
+      </div>
+      <h3 style="text-align:center;">Location</h3>
+      <div class="location-text">
+        <strong>INSPIRE CAREER DEVELOPMENT CENTER</strong><br>
+        No.3, Arul Nesan street, Pazhani Raja Udayar Nagar,<br>
+        ECR, Lawspet, Pondicherry, India – 605008.<br>
+        <em>Landmark: Integra software services</em>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

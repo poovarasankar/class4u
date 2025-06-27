@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Japanese - Unlock a World of Opportunities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #004d47;
+            --light-green: #4db6ac;
+            --dark-green: #00332f;
+            --accent-green: #00897b;
+            --background: #e0f2f1;
+            --japan-red: #bc002d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 77, 71, 0.8), rgba(0, 77, 71, 0.8)),
+                        url('https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--dark-green);
+            position: relative;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: var(--primary-green);
+            border-bottom: 2px solid var(--light-green);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: var(--primary-green);
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .method-card {
+            background-color: #e0f2f1;
+            border-left: 4px solid var(--accent-green);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .method-icon {
+            color: var(--japan-red);
+            font-size: 1.5em;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .benefit-icon {
+            color: var(--japan-red);
+            font-size: 1.5em;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--japan-red);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 20px;
+            border: 2px solid var(--japan-red);
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            color: var(--japan-red);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+         .highlight-box h2{
+            color: #f5f5f5;
+         }
+         .highlight-box h3{
+            color: #f5f5f5;
+         }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Alphabet Display */
+        .alphabet-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .alphabet-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .alphabet-card {
+            width: 30%;
+            min-width: 250px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .alphabet-title {
+            color: var(--japan-red);
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .alphabet-char {
+            font-size: 1.5em;
+            padding: 5px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 10px;
+            background-color: white;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+            border-left: 4px solid var(--japan-red);
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-size: 4em;
+            color: var(--light-green);
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            padding-left: 40px;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+            color: var(--primary-green);
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .alphabet-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Learn Japanese – Unlock a World of Opportunities</h1>
+            <p>Develop fluency that's functional and long-lasting with our immersive program</p>
+            <a href="#" class="cta-button">Start Learning Today <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Discover the Beauty of Japanese</h2>
+            <p>Japanese is a fascinating language with three writing systems: Hiragana, Katakana, and Kanji. Mastering these scripts is your first step to fluency.</p>
+
+            <div class="alphabet-section">
+                <div class="alphabet-container">
+                    <div class="alphabet-card">
+                        <div class="alphabet-title">Hiragana (ひらがな)</div>
+                        <p>The basic phonetic script used for native Japanese words and grammar.</p>
+                        <div class="alphabet-grid">
+                            <div class="alphabet-char">あ</div>
+                            <div class="alphabet-char">い</div>
+                            <div class="alphabet-char">う</div>
+                            <div class="alphabet-char">え</div>
+                            <div class="alphabet-char">お</div>
+                            <div class="alphabet-char">か</div>
+                            <div class="alphabet-char">き</div>
+                            <div class="alphabet-char">く</div>
+                            <div class="alphabet-char">け</div>
+                            <div class="alphabet-char">こ</div>
+                        </div>
+                    </div>
+
+                    <div class="alphabet-card">
+                        <div class="alphabet-title">Katakana (カタカナ)</div>
+                        <p>Used for foreign words, names, and scientific terms.</p>
+                        <div class="alphabet-grid">
+                            <div class="alphabet-char">ア</div>
+                            <div class="alphabet-char">イ</div>
+                            <div class="alphabet-char">ウ</div>
+                            <div class="alphabet-char">エ</div>
+                            <div class="alphabet-char">オ</div>
+                            <div class="alphabet-char">カ</div>
+                            <div class="alphabet-char">キ</div>
+                            <div class="alphabet-char">ク</div>
+                            <div class="alphabet-char">ケ</div>
+                            <div class="alphabet-char">コ</div>
+                        </div>
+                    </div>
+
+                    <div class="alphabet-card">
+                        <div class="alphabet-title">Kanji (漢字)</div>
+                        <p>Chinese characters used for most nouns, verbs, and adjectives.</p>
+                        <div class="alphabet-grid">
+                            <div class="alphabet-char">日</div>
+                            <div class="alphabet-char">月</div>
+                            <div class="alphabet-char">水</div>
+                            <div class="alphabet-char">火</div>
+                            <div class="alphabet-char">木</div>
+                            <div class="alphabet-char">人</div>
+                            <div class="alphabet-char">山</div>
+                            <div class="alphabet-char">川</div>
+                            <div class="alphabet-char">大</div>
+                            <div class="alphabet-char">小</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Japanese Temple">
+                    <div class="gallery-caption">Traditional Culture</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tokyo Street">
+                    <div class="gallery-caption">Modern Japan</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Japanese Food">
+                    <div class="gallery-caption">Delicious Cuisine</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Japanese Students">
+                    <div class="gallery-caption">Education System</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Effective Methods and Strategies</h2>
+            <p>Learning Japanese is not just about memorizing vocabulary or mastering kanji — it's about developing the mindset to think and express yourself naturally in Japanese. Our program is grounded in interactive pedagogy, designed to help learners internalize the language through immersive and learner-centered strategies:</p>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-brain"></i></div>
+                <div>
+                    <h3>Thinking in the Target Language</h3>
+                    <p>From the first session, learners are encouraged to process and respond directly in Japanese — eliminating the habit of translating from English or Hindi.</p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-tasks"></i></div>
+                <div>
+                    <h3>Task-Based Learning</h3>
+                    <p>Real-world simulations such as hospital conversations, workplace meetings, and emergency responses make learning practical.</p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-theater-masks"></i></div>
+                <div>
+                    <h3>Role Plays and Language Labs</h3>
+                    <p>Build confidence with activities designed around daily life, workplace scenarios, and cultural situations in Japan.</p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-torii-gate"></i></div>
+                <div>
+                    <h3>Cultural Contextualization</h3>
+                    <p>Japanese customs, etiquette, and non-verbal cues are taught alongside language skills, ensuring culturally appropriate communication.</p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-laptop-house"></i></div>
+                <div>
+                    <h3>Blended & Flexible Learning</h3>
+                    <p>Access a mix of live sessions, recordings, flashcards, voice-based exercises, and self-paced digital practice for maximum flexibility and retention.</p>
+                </div>
+            </div>
+
+            <p>We empower students to think, speak, and live in Japanese — with fluency that's functional and long-lasting.</p>
+        </div>
+
+        <div class="section">
+            <h2>Benefits and Practical Usage</h2>
+            <p>Japanese opens doors far beyond language:</p>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-plane"></i></div>
+                <div>
+                    <strong>Travel Smart:</strong> Communicate confidently when visiting Japan.
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div>
+                    <strong>Study Abroad:</strong> Apply to Japan's top universities with the language skills to thrive.
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
+                <div>
+                    <strong>Professional Growth:</strong> Stand out in global roles requiring intercultural expertise.
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-film"></i></div>
+                <div>
+                    <strong>Cultural Access:</strong> Enjoy anime, films, literature, and traditional arts without translation.
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-brain"></i></div>
+                <div>
+                    <strong>Cognitive & Academic Boost:</strong> Learning Japanese develops stronger memory, patience, and analytical skills — traits essential across professions.
+                </div>
+            </div>
+
+            <p>Whether you're a student, a professional, or a language enthusiast, the real-world relevance of Japanese makes it a high-value skill.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h2><i class="fas fa-heartbeat"></i> Specialized Japanese for Nursing Professionals</h2>
+            <p>Japan has a growing demand for international nurses and caregivers, and language proficiency is the first step to working in its world-class healthcare system. We offer an 800-hour specialized Japanese language course for nurses, focusing on:</p>
+            <ul>
+                <li><i class="fas fa-notes-medical"></i> Medical Vocabulary & Terminology</li>
+                <li><i class="fas fa-hospital"></i> Hospital Communication & Daily Reporting</li>
+                <li><i class="fas fa-comments"></i> Polite Speech & Patient Interaction (Keigo)</li>
+                <li><i class="fas fa-hand-holding-heart"></i> Understanding Japanese Healthcare Ethics & Systems</li>
+                <li><i class="fas fa-file-alt"></i> JLPT & Prometric Exam Preparation (for Nursing Licensure)</li>
+            </ul>
+
+            <h3>This program is ideal for:</h3>
+            <ul>
+                <li>Registered nurses and caregivers preparing for work in Japan.</li>
+                <li>Nursing students aiming for international internships or jobs.</li>
+                <li>Hospitals and institutions sending staff through SSW/TITP government schemes.</li>
+            </ul>
+
+            <p>We offer personalized learning, flexible timings, and real-time support from experienced trainers who understand both the medical and linguistic context of working in Japan.</p>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="cta-button">Learn More About Nursing Program <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-content">
+                <p>This Japanese program completely transformed my career prospects. After completing the nursing-focused course, I passed the JLPT N2 exam and secured a position at a Tokyo hospital. The cultural training was especially valuable in helping me adapt to the Japanese healthcare system.</p>
+                <div class="testimonial-author">- Priya Sharma, Registered Nurse in Tokyo</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Career Opportunities</h2>
+            <p>Proficiency in Japanese opens career paths in:</p>
+            <ul>
+                <li><strong><i class="fas fa-user-nurse"></i> Healthcare & Nursing:</strong> As a registered nurse, caregiver, or support staff in Japanese hospitals and elder care centers.</li>
+                <li><strong><i class="fas fa-briefcase"></i> Corporate Sector:</strong> Business liaison roles, client servicing, and multinational coordination.</li>
+                <li><strong><i class="fas fa-laptop-code"></i> Engineering & IT:</strong> Japanese clients often seek bilingual project managers and engineers.</li>
+                <li><strong><i class="fas fa-language"></i> Translation & Teaching:</strong> Become a language trainer, interpreter, or content localizer.</li>
+                <li><strong><i class="fas fa-umbrella-beach"></i> Tourism & Trade:</strong> Guide tourists or support Indo-Japan business partnerships.</li>
+            </ul>
+
+            <p>Major industries hiring include automotive, healthcare, IT, hospitality, government, and academia. With Japan facing a workforce shortage, especially in caregiving, language-qualified professionals are highly sought after.</p>
+        </div>
+
+        <div class="section">
+            <h2>Placement Assistance</h2>
+            <p>We don't just teach — we launch your career:</p>
+            <ul>
+                <li><strong><i class="fas fa-map-marked-alt"></i> Personalized Roadmaps:</strong> Career counseling to align your language goals with nursing, education, or corporate pathways.</li>
+                <li><strong><i class="fas fa-handshake"></i> Placement Support:</strong> Direct tie-ups with hospitals, caregiving centers, MNCs, and recruitment partners in Japan.</li>
+                <li><strong><i class="fas fa-file-signature"></i> Resume & Interview Prep (in Japanese):</strong> Learn to present your skills professionally and confidently.</li>
+                <li><strong><i class="fas fa-certificate"></i> Certifications:</strong> Assistance with JLPT/NAT certifications, needed for visa and job eligibility.</li>
+            </ul>
+
+            <p>Many of our nursing candidates have gone on to secure employment in Japan through the SSW (Specified Skilled Worker) and TITP (Technical Intern Training Program) schemes.</p>
+        </div>
+
+        <div class="section" style="text-align: center;">
+            <h2>Begin Your Japanese Journey Today</h2>
+            <p>Whether you're a nurse preparing to work in Japan, a student with global dreams, or a professional exploring international growth, our Japanese language program is tailored for your success.</p>
+
+            <div class="image-gallery" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); margin: 30px auto; max-width: 800px;">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Online Learning">
+                    <div class="gallery-caption">Flexible Online Classes</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Group Learning">
+                    <div class="gallery-caption">Interactive Sessions</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Career Growth">
+                    <div class="gallery-caption">Career Opportunities</div>
+                </div>
+            </div>
+
+            <div style="display: inline-block; text-align: left; margin: 20px 0;">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="far fa-clock"></i></div>
+                    <div>Flexible learning schedules</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
+                    <div>Industry-specific language training</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-passport"></i></div>
+                    <div>Certification and visa preparation</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                    <div>Real career pathways, not just classroom learning</div>
+                </div>
+            </div>
+
+            <a href="#" class="cta-button">Enroll Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+
+</body>
+</html>

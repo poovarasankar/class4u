@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+
+
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1518998053901-5348d3961a04') center/cover no-repeat;
+      height: 15vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .gallery-container {
+      max-width: 1400px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-item {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* .item-info {
+      padding: 1rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.6));
+      color: #fff;
+      background-color: #333;
+    }
+
+    .item-info h3 {
+      font-size: 1.2rem;
+      margin: 0 0 0.3rem;
+    }
+
+    .item-info p {
+      font-size: 0.95rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .item-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    } */
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        height: 50vh;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <section class="hero">
+    <h1>Gallery</h1>
+  </section>
+
+  <div class="gallery-container">
+    <div class="gallery">
+       <div class="gallery-item">
+        <img src="gallery/i14.jpeg" alt="Street Photography">
+        <!-- <div class="item-info">
+          <h3>City Pulse</h3>
+          <p>Street photography series</p>
+          <div class="item-meta">
+            <span>By Lisa Wong</span>
+            <span>2022</span>
+          </div>
+        </div> -->
+      </div>
+       <div class="gallery-item">
+        <img src="gallery/i14.jpeg" alt="Abstract Art">
+        <!-- <div class="item-info">
+          <h3>Color Theory</h3>
+          <p>Abstract expressionism</p>
+          <div class="item-meta">
+            <span>By David Kim</span>
+            <span>2020</span>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery/i16.jpeg" alt="Fashion Photography">
+        <!-- <div class="item-info">
+          <h3>Urban Elegance</h3>
+          <p>Fashion editorial series</p>
+          <div class="item-meta">
+            <span>By Fashion House</span>
+            <span>2023</span>
+          </div>
+        </div> -->
+      </div>
+      <div class="gallery-item">
+        <img src="gallery/i16.jpeg" alt="Fashion Photography">
+        <!-- <div class="item-info">
+          <h3>Urban Elegance</h3>
+          <p>Fashion editorial series</p>
+          <div class="item-meta">
+            <span>By Fashion House</span>
+            <span>2023</span>
+          </div>
+        </div> -->
+      </div>
+      <div class="gallery-item">
+        <img src="gallery/i12.jpeg" alt="Featured Artwork">
+        <!-- <div class="item-info">
+          <h3>Golden Horizon</h3>
+          <p>Landscape photography capturing the beauty of nature</p>
+          <div class="item-meta">
+            <span>By Sarah Johnson</span>
+            <span>2023</span>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery/i10.jpeg" alt="Portrait">
+        <!-- <div class="item-info">
+          <h3>Human Essence</h3>
+          <p>Emotional portrait series</p>
+          <div class="item-meta">
+            <span>By Michael Chen</span>
+            <span>2022</span>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery/i11.jpeg" alt="Sculpture">
+        <!-- <div class="item-info">
+          <h3>Form & Void</h3>
+          <p>Contemporary sculpture study</p>
+          <div class="item-meta">
+            <span>By Elena Rodriguez</span>
+            <span>2021</span>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery/i15.jpeg" alt="Urban Landscape">
+        <!-- <div class="item-info">
+          <h3>Metropolis</h3>
+          <p>Urban architecture photography</p>
+          <div class="item-meta">
+            <span>By James Wilson</span>
+            <span>2023</span>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery/i13.jpeg" alt="Panoramic View">
+        <!-- <div class="item-info">
+          <h3>Endless Vista</h3>
+          <p>Panoramic nature photography</p>
+          <div class="item-meta">
+            <span>By Nature Collective</span>
+            <span>2022</span>
+          </div>
+        </div> -->
+      </div>
+
+
+
+      <div class="gallery-item">
+        <img src="gallery/i17.jpeg" alt="Art Installation">
+        <!-- <div class="item-info">
+          <h3>Ephemeral Structures</h3>
+          <p>Large-scale art installation</p>
+          <div class="item-meta">
+            <span>By Studio Collective</span>
+            <span>2021</span>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="gallery-item">
+        <img src="gallery/i3.jpeg" alt="Street Photography">
+        <!-- <div class="item-info">
+          <h3>City Pulse</h3>
+          <p>Street photography series</p>
+          <div class="item-meta">
+            <span>By Lisa Wong</span>
+            <span>2022</span>
+          </div>
+        </div> -->
+      </div>
+       <div class="gallery-item">
+        <img src="gallery/i19.jpeg" alt="Street Photography">
+        <!-- <div class="item-info">
+          <h3>City Pulse</h3>
+          <p>Street photography series</p>
+          <div class="item-meta">
+            <span>By Lisa Wong</span>
+            <span>2022</span>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
