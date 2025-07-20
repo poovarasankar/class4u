@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Spanish – The Global Language of Connection and Opportunity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --spanish-red: #AA151B;
+            --spanish-yellow: #F1BF00;
+            --spanish-dark: #1A1A1A;
+            --light-gray: #f5f5f5;
+            --accent-orange: #E67E22;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--spanish-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(rgba(170, 21, 27, 0.8), rgba(170, 21, 27, 0.8)),
+                        url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .spanish-flag {
+            height: 10px;
+            background: linear-gradient(to bottom, var(--spanish-red) 25%, var(--spanish-yellow) 25%, var(--spanish-yellow) 75%, var(--spanish-red) 75%);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: var(--spanish-red);
+            border-bottom: 2px solid var(--spanish-yellow);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: var(--spanish-red);
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .method-card {
+            background-color: var(--light-gray);
+            border-left: 4px solid var(--spanish-red);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .method-icon {
+            color: var(--spanish-red);
+            font-size: 1.5em;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .benefit-icon {
+            color: var(--spanish-red);
+            font-size: 1.5em;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--spanish-red);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 20px;
+            border: 2px solid var(--spanish-red);
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            color: var(--spanish-red);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--spanish-red), #8a1217);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+         .highlight-box,h2{
+            color: #f5f5f5;
+         }
+         .highlight-box,h3{
+            color: #f5f5f5;
+         }
+
+        /* Alphabet Section */
+        .alphabet-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .alphabet-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .alphabet-card {
+            width: 45%;
+            min-width: 300px;
+            margin-bottom: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .alphabet-title {
+            color: var(--spanish-red);
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 1px solid var(--spanish-yellow);
+            padding-bottom: 5px;
+        }
+
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .alphabet-char {
+            font-size: 1.5em;
+            padding: 8px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .alphabet-char:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            background-color: var(--light-gray);
+        }
+
+        /* Special Characters Section */
+        .special-chars {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            background-color: white;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            position: relative;
+            border-left: 4px solid var(--spanish-red);
+        }
+
+        .testimonial:before {
+            content: '"';
+            font-size: 4em;
+            color: var(--spanish-red);
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            padding-left: 40px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+            color: var(--spanish-red);
+            margin-top: 15px;
+        }
+
+        /* Flag Decorations */
+        .flag-decoration {
+            height: 5px;
+            background: linear-gradient(to right, var(--spanish-red) 25%, var(--spanish-yellow) 25%, var(--spanish-yellow) 75%, var(--spanish-red) 75%);
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: var(--spanish-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .alphabet-card {
+                width: 100%;
+            }
+
+            .alphabet-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="spanish-flag"></div>
+            <h1>Learn Spanish – The Global Language of Connection and Opportunity</h1>
+            <p>Master the language spoken by 500 million people across 21 countries</p>
+            <a href="#" class="cta-button">Start Learning <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Discover the Spanish Language</h2>
+            <p>Spanish uses the Latin alphabet with a few special characters. Start your journey by familiarizing yourself with its letters and unique sounds.</p>
+
+            <div class="alphabet-section">
+                <div class="alphabet-container">
+                    <div class="alphabet-card">
+                        <div class="alphabet-title">Spanish Alphabet (El alfabeto español)</div>
+                        <p>The Spanish alphabet contains 27 letters, including the unique ñ.</p>
+                        <div class="alphabet-grid">
+                            <div class="alphabet-char">A</div>
+                            <div class="alphabet-char">B</div>
+                            <div class="alphabet-char">C</div>
+                            <div class="alphabet-char">D</div>
+                            <div class="alphabet-char">E</div>
+                            <div class="alphabet-char">F</div>
+                            <div class="alphabet-char">G</div>
+                            <div class="alphabet-char">H</div>
+                            <div class="alphabet-char">I</div>
+                            <div class="alphabet-char">J</div>
+                            <div class="alphabet-char">K</div>
+                            <div class="alphabet-char">L</div>
+                        </div>
+                    </div>
+
+                    <div class="alphabet-card">
+                        <div class="alphabet-title">Special Characters</div>
+                        <p>Spanish has unique letters and accent marks that change pronunciation:</p>
+                        <div class="alphabet-grid">
+                            <div class="alphabet-char">Ñ</div>
+                            <div class="alphabet-char">á</div>
+                            <div class="alphabet-char">é</div>
+                            <div class="alphabet-char">í</div>
+                            <div class="alphabet-char">ó</div>
+                            <div class="alphabet-char">ú</div>
+                            <div class="alphabet-char">ü</div>
+                            <div class="alphabet-char">¿</div>
+                            <div class="alphabet-char">¡</div>
+                        </div>
+
+                        <div class="special-chars">
+                            <h4>Pronunciation Guide:</h4>
+                            <ul>
+                                <li><strong>Ñ</strong> - sounds like "ny" in "canyon"</li>
+                                <li><strong>Accents (á, é, í, ó, ú)</strong> - indicate stressed syllables</li>
+                                <li><strong>Ü</strong> - pronounced with a strong "w" sound</li>
+                                <li><strong>¡¿</strong> - inverted punctuation marks unique to Spanish</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="#" class="cta-button">Learn Pronunciation <i class="fas fa-volume-up"></i></a>
+                </div>
+            </div>
+
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Madrid">
+                    <div class="gallery-caption">Madrid, Spain</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Mexico City">
+                    <div class="gallery-caption">Mexico City, Mexico</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1526397751294-331021109fbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Buenos Aires">
+                    <div class="gallery-caption">Buenos Aires, Argentina</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Barcelona">
+                    <div class="gallery-caption">Barcelona, Spain</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Effective Methods and Strategies</h2>
+            <p>Our Spanish program is built on the principle that language is not learned — it is lived. We use a communication-first and culturally immersive methodology.</p>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-comments"></i></div>
+                <div>
+                    <h3>Interactive and Context-Based Learning</h3>
+                    <p>Lessons are built around real situations — travel, business meetings, hospital visits, and social scenarios.</p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-brain"></i></div>
+                <div>
+                    <h3>Think in Spanish</h3>
+                    <p>From the start, we train your brain to think in Spanish using visual aids, context clues, and constant exposure.</p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-theater-masks"></i></div>
+                <div>
+                    <h3>Speaking Labs & Role Plays</h3>
+                    <p>Practice conversations through guided dialogues and improvisation activities that simulate everyday interactions.</p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-book-open"></i></div>
+                <div>
+                    <h3>Grammar through Function</h3>
+                    <p>Learn tenses and structures not in isolation but through stories, emails, videos, and interactive tasks.</p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon"><i class="fas fa-globe-americas"></i></div>
+                <div>
+                    <h3>Latin America & Spain Variants</h3>
+                    <p>Understand the differences in accents, vocabulary, and cultural norms to speak globally.</p>
+                </div>
+            </div>
+
+            <div class="flag-decoration"></div>
+
+            <p>Our focus is on building real-time fluency, not textbook knowledge — preparing you for academic, professional, and personal success.</p>
+        </div>
+
+        <div class="section">
+            <h2>Benefits and Practical Usage</h2>
+            <p>Spanish is spoken by over 500 million people across 21 countries, and its relevance spans business, education, healthcare, travel, and international collaboration.</p>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-plane"></i></div>
+                <div>
+                    <strong>Travel & Culture:</strong> Whether it's Spain, Mexico, Peru, or Argentina — Spanish helps you explore with confidence.
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div>
+                    <strong>Education:</strong> Spanish is among the most popular second languages for international students and researchers.
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
+                <div>
+                    <strong>Business:</strong> Spanish-speaking countries are among India's fastest-growing trade partners in Latin America and Europe.
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-film"></i></div>
+                <div>
+                    <strong>Arts & Communication:</strong> Gain direct access to world literature, cinema, music, and news.
+                </div>
+            </div>
+
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-globe"></i></div>
+                <div>
+                    <strong>Global Citizenship:</strong> Spanish is a bridge language for diplomacy, development, and cultural exchange across continents.
+                </div>
+            </div>
+
+            <div class="flag-decoration"></div>
+
+            <p>For Indians seeking international exposure, Spanish is one of the most employer-preferred languages, second only to German and Japanese in many sectors.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h2><i class="fas fa-user-md"></i> Specialized Spanish for Nursing and Healthcare Professionals</h2>
+            <p>With increasing Indo-Latin American ties and demand in Spain for healthcare staff, we provide Spanish for Medical and Nursing Professionals.</p>
+
+            <h3>Our program includes:</h3>
+            <ul>
+                <li><i class="fas fa-comment-medical"></i> Basic to Intermediate Spanish for Nursing Communication</li>
+                <li><i class="fas fa-book-medical"></i> Medical Vocabulary for Caregiving, Elderly, and Clinical Settings</li>
+                <li><i class="fas fa-user-md"></i> Doctor-Patient Interaction Phrases and Emergency Language</li>
+                <li><i class="fas fa-hands-helping"></i> Cultural Training on Working in Latin America or Spain's Healthcare Systems</li>
+                <li><i class="fas fa-file-alt"></i> Preparation for DELE and SIELE Exams (Required for Spain Migration)</li>
+            </ul>
+
+            <h3>Who should take this?</h3>
+            <ul>
+                <li>Nurses applying to Spain, Chile, Argentina, or Peru under G2G programs</li>
+                <li>Caregivers and paramedics supporting Spanish-speaking patients in India</li>
+                <li>Hospitals preparing staff for global placements</li>
+                <li>Professionals preparing for internships in global health organizations</li>
+            </ul>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="cta-button">Healthcare Program Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-content">
+                <p>"After completing the Spanish for Nurses program, I passed the DELE B2 exam and secured a position at a Barcelona hospital. The medical Spanish training was incredibly practical for daily patient interactions."</p>
+                <div class="testimonial-author">- Ananya Patel, Nurse in Barcelona</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Career Opportunities</h2>
+            <p>Spanish unlocks career paths across India, Spain, Latin America, the U.S., and Africa, including:</p>
+
+            <div class="image-gallery" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Business">
+                    <div class="gallery-caption">International Business</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery/spanishheath.jpg" alt="Healthcare">
+                    <div class="gallery-caption">Healthcare</div>
+                </div>
+                  <div class="gallery-item">
+                    <img src="gallery/spanish-culture.png" alt="Healthcare">
+                    <div class="gallery-caption">Culture</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Education">
+                    <div class="gallery-caption">Education</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tourism">
+                    <div class="gallery-caption">Tourism</div>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong><i class="fas fa-briefcase"></i> International Business & Trade:</strong> Liaison officer, export/import executive, trade analyst</li>
+                <li><strong><i class="fas fa-language"></i> Translation & Interpretation:</strong> Government interpreter, event translator, subtitler, and content localizer</li>
+                <li><strong><i class="fas fa-user-md"></i> Healthcare:</strong> Nursing staff and caregivers working in or with Spanish-speaking communities</li>
+                <li><strong><i class="fas fa-plane"></i> Tourism & Airlines:</strong> Tour manager, airline executive, travel planner</li>
+                <li><strong><i class="fas fa-landmark"></i> Embassies & NGOs:</strong> Spanish language officer, development program associate</li>
+                <li><strong><i class="fas fa-chalkboard-teacher"></i> Teaching & EdTech:</strong> Spanish tutor, online educator, curriculum developer</li>
+            </ul>
+
+            <p>Industries hiring Spanish speakers include MNCs, BPO/KPOs, international schools, embassies, and global health organizations.</p>
+        </div>
+
+        <div class="section">
+            <h2>Placement Assistance</h2>
+            <p>We provide end-to-end placement guidance and support to our Spanish learners:</p>
+            <ul>
+                <li><strong><i class="fas fa-map-marked-alt"></i> Career Counselling:</strong> Match your profile with relevant industries — nursing, travel, teaching, diplomacy, or trade.</li>
+                <li><strong><i class="fas fa-file-signature"></i> Resume Building in Spanish & English:</strong> Draft application documents that resonate with Spanish-speaking recruiters.</li>
+                <li><strong><i class="fas fa-certificate"></i> Exam Guidance:</strong> Support in DELE, SIELE, or CELU certifications for work, PR, and study.</li>
+                <li><strong><i class="fas fa-handshake"></i> Partner Network:</strong> Access job links and tie-ups with organizations hiring Spanish speakers.</li>
+                <li><strong><i class="fas fa-comments"></i> Mock Interviews & Speaking Practice:</strong> Simulate real interview scenarios in Spanish.</li>
+            </ul>
+
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"The placement team helped me secure a position as a Spanish translator at a multinational company in Delhi. Their interview preparation in Spanish was invaluable for my career transition."</p>
+                    <div class="testimonial-author">- Rahul Mehta, Spanish Translator</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center;">
+            <h2>Enroll in Our Spanish Program Today</h2>
+            <p>Whether you're exploring global careers, planning a move to Spain, or just love the rhythm of Spanish — this course will transform your language dreams into real-world outcomes.</p>
+
+            <div style="display: inline-block; text-align: left; margin: 20px 0;">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-layer-group"></i></div>
+                    <div>Levels: A1 to B2</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-road"></i></div>
+                    <div>Tracks available: General Spanish / Spanish for Nurses / Business Spanish</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-laptop"></i></div>
+                    <div>Live online + self-paced formats</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
+                    <div>Placement support & certification assistance</div>
+                </div>
+            </div>
+
+            <a href="#" class="cta-button">Enroll Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
